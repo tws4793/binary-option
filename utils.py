@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import statistics
+from config import *
 
 def get_z(N):
     z = np.random.standard_normal(N)
@@ -20,9 +21,8 @@ def get_ticker_data(ticker):
         return sigma
     
     ext = 'csv'
-    api_key = '5yqic-ytq2SYstvNsziP'
     
-    url_quandl = 'https://www.quandl.com/api/v3/datasets/WIKI/' + ticker + '.' + ext + '?api-key=' + api_key
+    url_quandl = 'https://www.quandl.com/api/v3/datasets/WIKI/' + ticker + '.' + ext + '?api-key=' + QUANDL_API_KEY
     url_yahoo = 'https://finance.yahoo.com/quote/' + ticker + '/key-statistics'
     url_treasury = 'https://'
 
